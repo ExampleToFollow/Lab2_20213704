@@ -68,12 +68,10 @@ public class MainActivity extends AppCompatActivity {
         });
         //Cambiamos de vista
         jugar.setOnClickListener(new View.OnClickListener() {
-                                     @Override
-                                     public void onClick(View view) {
-                                         cambiarVistaPrincipal(view);
-                                     }
-                                 }
-        );
+            @Override public void onClick(View view) {
+                cambiarVistaPrincipal(view);
+            }
+        });
 
 
     }
@@ -88,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
         //Lanzamos el intent
         startActivity(intent);
     }
+
     @Override
     public void onCreateContextMenu(ContextMenu menu , View v,ContextMenu.ContextMenuInfo menuInfo){
         super.onCreateContextMenu(menu,v,menuInfo);

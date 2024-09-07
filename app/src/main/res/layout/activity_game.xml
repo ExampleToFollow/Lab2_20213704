@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/game_vista"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GameActivity"
+    tools:layout_editor_absoluteX="21dp"
+    tools:layout_editor_absoluteY="5dp">
+
+    <ImageView
+        android:id="@+id/antena"
+        android:layout_width="201dp"
+        android:layout_height="256dp"
+        android:layout_marginStart="89dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="121dp"
+        android:layout_marginBottom="498dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/antenna_sin_fondo" />
+
+    <ImageView
+        android:id="@+id/izquierdo1"
+        android:layout_width="28dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="246dp"
+        android:layout_marginTop="181dp"
+        android:layout_marginEnd="137dp"
+        android:layout_marginBottom="635dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/brazo_dere_pierna_izq_sin_fondo" />
+
+    <ImageView
+        android:id="@+id/torso"
+        android:layout_width="76dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="238dp"
+        android:layout_marginTop="174dp"
+        android:layout_marginEnd="97dp"
+        android:layout_marginBottom="624dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/torso_sin_fondo" />
+
+    <ImageView
+        android:id="@+id/cabeza"
+        android:layout_width="28dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="262dp"
+        android:layout_marginTop="149dp"
+        android:layout_marginEnd="121dp"
+        android:layout_marginBottom="671dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/head1_sin_fondo" />
+
+    <ImageView
+        android:id="@+id/derecho1"
+        android:layout_width="24dp"
+        android:layout_height="28dp"
+
+        android:layout_marginStart="274dp"
+        android:layout_marginTop="181dp"
+        android:layout_marginEnd="113dp"
+        android:layout_marginBottom="637dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/brazo_izq_pierna_dere_sin_fondo" />
+
+    <ImageView
+        android:id="@+id/izquierdo2"
+        android:layout_width="28dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="246dp"
+        android:layout_marginTop="211dp"
+        android:layout_marginEnd="137dp"
+        android:layout_marginBottom="605dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/brazo_dere_pierna_izq_sin_fondo" />
+
+    <ImageView
+        android:id="@+id/derecho2"
+        android:layout_width="24dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="274dp"
+        android:layout_marginTop="211dp"
+        android:layout_marginEnd="113dp"
+        android:layout_marginBottom="606dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/brazo_izq_pierna_dere_sin_fondo" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
