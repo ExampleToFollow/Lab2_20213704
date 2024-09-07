@@ -9,109 +9,13 @@
     tools:layout_editor_absoluteX="-5dp"
     tools:layout_editor_absoluteY="0dp">
 
-    <ImageView
-        android:id="@+id/antena"
-        android:layout_width="201dp"
-        android:layout_height="256dp"
-        android:layout_marginStart="89dp"
-        android:layout_marginTop="92dp"
-        android:layout_marginEnd="121dp"
-        android:layout_marginBottom="498dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/antenna_sin_fondo" />
-
-    <ImageView
-        android:id="@+id/izquierdo1"
-        android:layout_width="28dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="241dp"
-        android:layout_marginTop="115dp"
-        android:layout_marginEnd="142dp"
-        android:layout_marginBottom="586dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/brazo_dere_pierna_izq_sin_fondo" />
-
-    <ImageView
-        android:id="@+id/torso"
-        android:layout_width="76dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="231dp"
-        android:layout_marginTop="115dp"
-        android:layout_marginEnd="104dp"
-        android:layout_marginBottom="568dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/torso_sin_fondo" />
-
-    <ImageView
-        android:id="@+id/cabeza"
-        android:layout_width="28dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="255dp"
-        android:layout_marginTop="89dp"
-        android:layout_marginEnd="128dp"
-        android:layout_marginBottom="616dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/head1_sin_fondo" />
-
-    <ImageView
-        android:id="@+id/derecho1"
-        android:layout_width="24dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="269dp"
-        android:layout_marginTop="117dp"
-        android:layout_marginEnd="118dp"
-        android:layout_marginBottom="586dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/brazo_izq_pierna_dere_sin_fondo" />
-
-    <ImageView
-        android:id="@+id/izquierdo2"
-        android:layout_width="28dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="241dp"
-        android:layout_marginTop="154dp"
-        android:layout_marginEnd="142dp"
-        android:layout_marginBottom="547dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/brazo_dere_pierna_izq_sin_fondo" />
-
-    <ImageView
-        android:id="@+id/derecho2"
-        android:layout_width="24dp"
-        android:layout_height="29dp"
-        android:layout_marginStart="269dp"
-        android:layout_marginTop="155dp"
-        android:layout_marginEnd="118dp"
-        android:layout_marginBottom="547dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/brazo_izq_pierna_dere_sin_fondo" />
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="380dp"
-        android:layout_marginTop="395dp"
-        android:layout_marginBottom="71dp"
+        android:layout_width="409dp"
+        android:layout_height="373dp"
+        android:layout_marginTop="318dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="155dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -261,7 +165,7 @@
                 tools:layout_editor_absoluteY="368dp" />
 
             <Button
-                android:id="@+id/L"
+                android:id="@+id/M"
                 android:layout_width="63sp"
                 android:layout_height="63sp"
                 android:layout_marginBottom="500sp"
@@ -413,6 +317,333 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="420dp"
+        android:layout_height="330dp"
+        android:layout_marginTop="59dp"
+        android:layout_marginBottom="484dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/antena"
+            android:layout_width="199dp"
+            android:layout_height="238dp"
+            android:layout_marginEnd="87dp"
+            android:layout_marginBottom="60dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/antenna_sin_fondo" />
+
+        <ImageView
+            android:layout_width="37dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="134dp"
+            android:layout_marginTop="219dp"
+            android:layout_marginEnd="249dp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/space" />
+
+        <TextView
+            android:id="@+id/ola3"
+            android:layout_width="32dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="182dp"
+            android:layout_marginTop="212dp"
+            android:layout_marginEnd="206dp"
+            android:gravity="center"
+            android:text="3"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/sexto"
+            android:layout_width="37dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="335dp"
+            android:layout_marginTop="219dp"
+            android:layout_marginEnd="48dp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/space" />
+
+        <ImageView
+            android:layout_width="37dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="182dp"
+            android:layout_marginTop="219dp"
+            android:layout_marginEnd="201dp"
+            android:layout_marginBottom="40dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/space" />
+
+        <TextView
+            android:id="@+id/ola2"
+            android:layout_width="32dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="134dp"
+            android:layout_marginTop="212dp"
+            android:layout_marginEnd="254dp"
+            android:layout_marginBottom="64dp"
+            android:gravity="center"
+            android:text="2"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/ola6"
+            android:layout_width="32dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="335dp"
+            android:layout_marginTop="212dp"
+            android:layout_marginBottom="64dp"
+            android:gravity="center"
+            android:text="6"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/ola1"
+            android:layout_width="32dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="82dp"
+            android:layout_marginTop="212dp"
+            android:gravity="center"
+            android:text="1"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="37dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="82dp"
+            android:layout_marginTop="219dp"
+            android:layout_marginEnd="301dp"
+            android:layout_marginBottom="40dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/space" />
+
+        <TextView
+            android:id="@+id/ola4"
+            android:layout_width="32dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="232dp"
+            android:layout_marginTop="212dp"
+            android:layout_marginEnd="156dp"
+            android:gravity="center"
+            android:text="4"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/ola5"
+            android:layout_width="32dp"
+            android:layout_height="22dp"
+            android:layout_marginTop="212dp"
+            android:layout_marginEnd="104dp"
+            android:layout_marginBottom="64dp"
+            android:gravity="center"
+            android:text="5"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="37dp"
+            android:layout_height="39dp"
+            android:layout_marginTop="219dp"
+            android:layout_marginEnd="99dp"
+            android:layout_marginBottom="40dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/space" />
+
+        <ImageView
+            android:id="@+id/torso"
+            android:layout_width="76dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="269dp"
+            android:layout_marginEnd="75dp"
+            android:layout_marginBottom="179dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/torso_sin_fondo" />
+
+        <ImageView
+            android:id="@+id/derecho2"
+            android:layout_width="24dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="308dp"
+            android:layout_marginTop="110dp"
+            android:layout_marginEnd="88dp"
+            android:layout_marginBottom="164dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/brazo_izq_pierna_dere_sin_fondo" />
+
+        <ImageView
+            android:id="@+id/izquierdo2"
+            android:layout_width="28dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="277dp"
+            android:layout_marginTop="111dp"
+            android:layout_marginEnd="115dp"
+            android:layout_marginBottom="162dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/brazo_dere_pierna_izq_sin_fondo" />
+
+        <ImageView
+            android:id="@+id/derecho1"
+            android:layout_width="24dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="308dp"
+            android:layout_marginTop="73dp"
+            android:layout_marginEnd="88dp"
+            android:layout_marginBottom="202dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/brazo_izq_pierna_dere_sin_fondo" />
+
+        <ImageView
+            android:id="@+id/cabeza"
+            android:layout_width="28dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="293dp"
+            android:layout_marginTop="44dp"
+            android:layout_marginEnd="99dp"
+            android:layout_marginBottom="233dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/head1_sin_fondo" />
+
+        <ImageView
+            android:id="@+id/izquierdo1"
+
+            android:layout_width="28dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="278dp"
+            android:layout_marginTop="73dp"
+            android:layout_marginEnd="114dp"
+            android:layout_marginBottom="200dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/brazo_dere_pierna_izq_sin_fondo" />
+
+        <ImageView
+            android:layout_width="37dp"
+            android:layout_height="39dp"
+            android:layout_marginTop="219dp"
+            android:layout_marginEnd="151dp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/space" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="409dp"
+        android:layout_height="103dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="692dp"
+        android:layout_marginBottom="31dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/jugarNuevo"
+            android:layout_width="150dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="169dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="140dp"
+            android:layout_marginBottom="69dp"
+            android:enabled="false"
+            android:text="Otra vez"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textoGanar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="176dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="106dp"
+            android:layout_marginBottom="44dp"
+            android:text="Ganó/ Termino en ..."
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textoPerder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="169dp"
+            android:layout_marginTop="79dp"
+            android:layout_marginEnd="106dp"
+            android:text="Perdio/ Termino en ..."
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
