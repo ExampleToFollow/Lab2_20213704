@@ -32,6 +32,7 @@
 
             <Button
                 android:id="@+id/A"
+                android:onClick="marcarLetra"
                 android:layout_width="63sp"
                 android:layout_height="63sp"
                 android:layout_marginBottom="500sp"
@@ -41,6 +42,7 @@
 
             <Button
                 android:id="@+id/B"
+                android:onClick="marcarLetra"
                 android:layout_width="63sp"
                 android:layout_height="63sp"
                 android:layout_marginBottom="500sp"
@@ -50,6 +52,7 @@
 
             <Button
                 android:id="@+id/C"
+                android:onClick="marcarLetra"
                 android:layout_width="63sp"
                 android:layout_height="63sp"
                 android:layout_marginBottom="500sp"
@@ -59,6 +62,7 @@
 
             <Button
                 android:id="@+id/D"
+                android:onClick="marcarLetra"
                 android:layout_width="63sp"
                 android:layout_height="63sp"
                 android:layout_marginBottom="500sp"
@@ -68,6 +72,7 @@
 
             <Button
                 android:id="@+id/E"
+                android:onClick="marcarLetra"
                 android:layout_width="63sp"
                 android:layout_height="63sp"
                 android:layout_marginBottom="500sp"
@@ -90,6 +95,7 @@
 
             <Button
                 android:id="@+id/F"
+                android:onClick="marcarLetra"
                 android:layout_width="63sp"
                 android:layout_height="63sp"
                 android:layout_marginBottom="500sp"
@@ -99,6 +105,7 @@
 
             <Button
                 android:id="@+id/G"
+                android:onClick="marcarLetra"
                 android:layout_width="63sp"
                 android:layout_height="63sp"
                 android:layout_marginBottom="500sp"
@@ -108,6 +115,7 @@
 
             <Button
                 android:id="@+id/H"
+                android:onClick="marcarLetra"
                 android:layout_width="63sp"
                 android:layout_height="63sp"
                 android:layout_marginBottom="500sp"
@@ -117,6 +125,7 @@
 
             <Button
                 android:id="@+id/I"
+                android:onClick="marcarLetra"
                 android:layout_width="63sp"
                 android:layout_height="63sp"
                 android:layout_marginBottom="500sp"
@@ -126,6 +135,7 @@
 
             <Button
                 android:id="@+id/J"
+                android:onClick="marcarLetra"
                 android:layout_width="63sp"
                 android:layout_height="63sp"
                 android:layout_marginBottom="500sp"
@@ -148,6 +158,7 @@
 
             <Button
                 android:id="@+id/K"
+                android:onClick="marcarLetra"
                 android:layout_width="63sp"
                 android:layout_height="63sp"
                 android:layout_marginBottom="500sp"
@@ -157,6 +168,7 @@
 
             <Button
                 android:id="@+id/L"
+                android:onClick="marcarLetra"
                 android:layout_width="63sp"
                 android:layout_height="63sp"
                 android:layout_marginBottom="500sp"
@@ -166,6 +178,7 @@
 
             <Button
                 android:id="@+id/M"
+                android:onClick="marcarLetra"
                 android:layout_width="63sp"
                 android:layout_height="63sp"
                 android:layout_marginBottom="500sp"
@@ -175,6 +188,7 @@
 
             <Button
                 android:id="@+id/N"
+                android:onClick="marcarLetra"
                 android:layout_width="63sp"
                 android:layout_height="63sp"
                 android:layout_marginBottom="500sp"
@@ -184,6 +198,7 @@
 
             <Button
                 android:id="@+id/O"
+                android:onClick="marcarLetra"
                 android:layout_width="63sp"
                 android:layout_height="63sp"
                 android:layout_marginBottom="500sp"
@@ -193,6 +208,7 @@
 
             <Button
                 android:id="@+id/P"
+                android:onClick="marcarLetra"
                 android:layout_width="63sp"
                 android:layout_height="63sp"
                 android:layout_marginBottom="500sp"
@@ -214,6 +230,7 @@
 
             <Button
                 android:id="@+id/Q"
+                android:onClick="marcarLetra"
                 android:layout_width="63sp"
                 android:layout_height="63sp"
                 android:layout_marginBottom="500sp"
@@ -223,6 +240,7 @@
 
             <Button
                 android:id="@+id/R"
+                android:onClick="marcarLetra"
                 android:layout_width="63sp"
                 android:layout_height="63sp"
                 android:layout_marginBottom="500sp"
@@ -232,6 +250,7 @@
 
             <Button
                 android:id="@+id/S"
+                android:onClick="marcarLetra"
                 android:layout_width="63sp"
                 android:layout_height="63sp"
                 android:layout_marginBottom="500sp"
@@ -241,6 +260,7 @@
 
             <Button
                 android:id="@+id/T"
+                android:onClick="marcarLetra"
                 android:layout_width="63sp"
                 android:layout_height="63sp"
                 android:layout_marginBottom="500sp"
@@ -250,6 +270,7 @@
 
             <Button
                 android:id="@+id/U"
+                android:onClick="marcarLetra"
                 android:layout_width="63sp"
                 android:layout_height="63sp"
                 android:layout_marginBottom="500sp"
@@ -259,6 +280,7 @@
 
             <Button
                 android:id="@+id/V"
+                android:onClick="marcarLetra"
                 android:layout_width="63sp"
                 android:layout_height="63sp"
                 android:layout_marginBottom="500sp"
@@ -283,6 +305,7 @@
                 android:layout_height="63sp"
                 android:layout_marginBottom="500sp"
                 android:text="W"
+                android:onClick="marcarLetra"
                 tools:layout_editor_absoluteX="61dp"
                 tools:layout_editor_absoluteY="368dp" />
 
@@ -292,6 +315,7 @@
                 android:layout_height="63sp"
                 android:layout_marginBottom="500sp"
                 android:text="X"
+                android:onClick="marcarLetra"
                 tools:layout_editor_absoluteX="61dp"
                 tools:layout_editor_absoluteY="368dp" />
 
@@ -301,6 +325,7 @@
                 android:layout_height="63sp"
                 android:layout_marginBottom="500sp"
                 android:text="Y"
+                android:onClick="marcarLetra"
                 tools:layout_editor_absoluteX="61dp"
                 tools:layout_editor_absoluteY="368dp" />
 
@@ -310,6 +335,7 @@
                 android:layout_height="63sp"
                 android:layout_marginBottom="500sp"
                 android:text="Z"
+                android:onClick="marcarLetra"
                 tools:layout_editor_absoluteX="61dp"
                 tools:layout_editor_absoluteY="368dp" />
 

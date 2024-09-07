@@ -1,11 +1,14 @@
 package com.example.lab2_20213704;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextClock;
 import android.widget.TextView;
 
@@ -26,10 +29,13 @@ public class GameActivity extends AppCompatActivity {
 
     public Usuario user;
     public int time;
-
+    String magicWord;
+    ArrayList<String> listaLetras;//Que quedan
     ArrayList<String> listaPalabras = new ArrayList<>(Arrays.asList(
             "FIBRA", "REDES", "ANTENA", "PROPA", "CLOUD", "TELECO"
     ));
+    int intentosFallidos = 0;
+    int aciertos = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,32 +46,124 @@ public class GameActivity extends AppCompatActivity {
         user = intent.getParcelableExtra("user");
         //Primero debemos preparar el tablero para porder jugar
         String word = listaPalabras.get((int) (Math.random() * listaPalabras.size()));
-        findViewById(R.id.sexto).setVisibility(View.VISIBLE);
+        magicWord =word;
+        listaLetras = new ArrayList<>(Arrays.asList(word.split("")));
+        ImageView cabeza =  (ImageView) findViewById(R.id.cabeza);
+        ImageView torso =  (ImageView) findViewById(R.id.torso);
+        ImageView derecho1 =  (ImageView) findViewById(R.id.derecho1);
+        ImageView derecho2 =  (ImageView) findViewById(R.id.derecho2);
+        ImageView izquierdo1 =  (ImageView) findViewById(R.id.izquierdo1);
+        ImageView izquierdo2 =  (ImageView) findViewById(R.id.izquierdo2);
+        cabeza.setVisibility(View.INVISIBLE);
+        torso.setVisibility(View.INVISIBLE);
+        derecho1.setVisibility(View.INVISIBLE);
+        derecho2.setVisibility(View.INVISIBLE);
+        izquierdo1.setVisibility(View.INVISIBLE);
+        izquierdo2.setVisibility(View.INVISIBLE);
 
-//        if(word.length()==5){
-//            //Ocultamos un caso
-//            findViewById(R.id.sexto).setVisibility(View.INVISIBLE);
-//            //Ahora cambiamos las palabras de cada text de acuerdo a la aleatoria qu enos haya salido
-//            ((TextView)findViewById(R.id.ola1)).setText(word.charAt(0));
-//            ((TextView)findViewById(R.id.ola2)).setText(word.charAt(1));
-//            ((TextView)findViewById(R.id.ola3)).setText(word.charAt(2));
-//            ((TextView)findViewById(R.id.ola4)).setText(word.charAt(3));
-//            ((TextView)findViewById(R.id.ola5)).setText(word.charAt(4));
-//
-//        }else{
-//            (findViewById(R.id.ola6)).bringToFront();
-//
-//
-//            ((TextView)findViewById(R.id.ola1)).setText(word.charAt(0));
-//            ((TextView)findViewById(R.id.ola2)).setText(word.charAt(1));
-//            ((TextView)findViewById(R.id.ola3)).setText(word.charAt(2));
-//            ((TextView)findViewById(R.id.ola4)).setText(word.charAt(3));
-//            ((TextView)findViewById(R.id.ola5)).setText(word.charAt(4));
-//            ((TextView)findViewById(R.id.ola6)).setText(word.charAt(5));
-//            //Usamos los 6 pedazos
-//        }
 
+        ((TextView)findViewById(R.id.ola1)).setVisibility(View.INVISIBLE);
+        ((TextView)findViewById(R.id.ola2)).setVisibility(View.INVISIBLE);
+        ((TextView)findViewById(R.id.ola3)).setVisibility(View.INVISIBLE);
+        ((TextView)findViewById(R.id.ola4)).setVisibility(View.INVISIBLE);
+        ((TextView)findViewById(R.id.ola5)).setVisibility(View.INVISIBLE);
+        ((TextView)findViewById(R.id.ola6)).setVisibility(View.INVISIBLE);
+
+
+
+        //Ahora revelamos lso contenidos de cada elemento de texto pero los volvemos invisibles
+        ((TextView)findViewById(R.id.ola1)).setText(word.split("")[0]);
+        ((TextView)findViewById(R.id.ola2)).setText(word.split("")[1]);
+        ((TextView)findViewById(R.id.ola3)).setText(word.split("")[2]);
+        ((TextView)findViewById(R.id.ola4)).setText(word.split("")[3]);
+        ((TextView)findViewById(R.id.ola5)).setText(word.split("")[4]);
+        if(word.length()==5){
+            //Ocultamos un caso
+            findViewById(R.id.sexto).setVisibility(View.INVISIBLE);
+            findViewById(R.id.ola6).setVisibility(View.INVISIBLE);
+
+            //Ahora cambiamos las palabras de cada text de acuerdo a la aleatoria qu enos haya salido
+        }else{
+            ((TextView)findViewById(R.id.ola6)).setText(word.split("")[5]);
+        }
+
+        //Ocultamos las letras nuevamente
     }
+
+    public void marcarLetra(View view){
+        //Obtenemos el boton
+        Button button = (Button) findViewById(view.getId());
+        button.setEnabled(false);
+        if(button.getText().toString().contains(magicWord)){
+            //Si contiene la palabra - Se escriben las coincidencias
+            TextView ola1 = ((TextView)findViewById(R.id.ola1));
+            if(button.getText().toString().equals(ola1.getText().toString())){
+                ola1.setVisibility(View.VISIBLE);
+                aciertos++;
+            }
+            TextView ola2 = ((TextView)findViewById(R.id.ola2));
+            if(button.getText().toString().equals(ola2.getText().toString())){
+                ola2.setVisibility(View.VISIBLE);
+                aciertos++;
+            }
+            TextView ola3 = ((TextView)findViewById(R.id.ola3));
+            if(button.getText().toString().equals(ola3.getText().toString())){
+                ola3.setVisibility(View.VISIBLE);
+                aciertos++;
+            }
+            TextView ola4 = ((TextView)findViewById(R.id.ola4));
+            if(button.getText().toString().equals(ola4.getText().toString())){
+                ola4.setVisibility(View.VISIBLE);
+                aciertos++;
+            }
+            TextView ola5 = ((TextView)findViewById(R.id.ola5));
+            if(button.getText().toString().equals(ola5.getText().toString())){
+                ola5.setVisibility(View.VISIBLE);
+                aciertos++;
+            }
+            TextView ola6 = ((TextView)findViewById(R.id.ola6));
+            if(button.getText().toString().equals(ola6.getText().toString())){
+                ola6.setVisibility(View.VISIBLE);
+                aciertos++;
+            }
+
+
+            if(aciertos == magicWord.length()){
+                //Se gana el juego
+
+            }
+        }else{
+            //Si no tiene la palabra ,dibujamos
+            ImageView cabeza =  (ImageView) findViewById(R.id.cabeza);
+            ImageView torso =  (ImageView) findViewById(R.id.torso);
+            ImageView derecho1 =  (ImageView) findViewById(R.id.derecho1);
+            ImageView derecho2 =  (ImageView) findViewById(R.id.derecho2);
+            ImageView izquierdo1 =  (ImageView) findViewById(R.id.izquierdo1);
+            ImageView izquierdo2 =  (ImageView) findViewById(R.id.izquierdo2);
+
+            if(intentosFallidos==0){
+                cabeza.setVisibility(View.VISIBLE);
+            }
+            if(intentosFallidos==1){
+                torso.setVisibility(View.VISIBLE);
+            }
+            if(intentosFallidos==2){
+                derecho1.setVisibility(View.VISIBLE);
+            }
+            if(intentosFallidos==3){
+                izquierdo1.setVisibility(View.VISIBLE);
+            }
+            if(intentosFallidos==4){
+                derecho2.setVisibility(View.VISIBLE);
+            }
+            if(intentosFallidos==5){
+                izquierdo2.setVisibility(View.VISIBLE);
+                //Se pierde
+            }
+            intentosFallidos++;
+        }
+    }
+
 
     @Override
     public  boolean onCreateOptionsMenu(Menu menu ){
