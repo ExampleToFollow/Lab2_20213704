@@ -24,15 +24,14 @@ public class GameActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_game);
+        setContentView(R.layout.game );
         Intent intent = getIntent();
         //Explorando los metodos encontre este que permite mandar clases de un activity a otro
         user = intent.getParcelableExtra("user");
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu ){
+    public  boolean onCreateOptionsMenu(Menu menu ){
         getMenuInflater().inflate(R.menu.app_bar, menu);
         return true;
     }
