@@ -10,12 +10,7 @@ public class Usuario implements Serializable {
    private String palabraIntento;
    private LinkedHashMap<Integer , String > listaIntentos;
 
-   public Usuario(String nombre, String palabraSecreta) {
-      this.nombre = nombre;
-      this.palabraSecreta = palabraSecreta;
-      this.palabraIntento = "";
-      this.listaIntentos = new LinkedHashMap<Integer, String >();
-   }
+
 
    public String getNombre() {
       return nombre;
