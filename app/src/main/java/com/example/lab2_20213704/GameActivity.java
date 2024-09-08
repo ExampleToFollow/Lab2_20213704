@@ -144,7 +144,7 @@ public class GameActivity extends AppCompatActivity {
                     Long tiempoJugado = last - time;
                     //Se muestra el mensaje de perder y el boton
                     TextView ola = findViewById(R.id.textoPerder);
-                    ola.setText("Ganó / teminó  en  " + tiempoJugado);
+                    ola.setText("Ganó / teminó  en  " + tiempoJugado + "ms");
 //                    ArrayList<String> lista = user.getListaIntentos();
 //                    lista.add("jugo-"+tiempoJugado.toString());
 //                    user.setListaIntentos(lista);
@@ -187,7 +187,7 @@ public class GameActivity extends AppCompatActivity {
                     Long tiempoJugado = last - time;
                     //Se muestra el mensaje de perder y el boton
                     TextView ola = findViewById(R.id.textoPerder);
-                    ola.setText("perdio / teminó  en  " + tiempoJugado);
+                    ola.setText("perdio / teminó  en  " + tiempoJugado+ "ms");
                     ola.setVisibility(View.VISIBLE);
                     ola.bringToFront();
 //                    ArrayList<String> lista  = user.getListaIntentos();
