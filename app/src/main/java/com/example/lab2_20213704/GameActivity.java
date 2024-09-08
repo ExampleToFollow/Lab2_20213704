@@ -22,13 +22,16 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.lab2_20213704.Beans.Usuario;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedHashMap;
 
 public class GameActivity extends AppCompatActivity {
 
     public Usuario user;
-    public int time;
+    public Long time;
     String magicWord;
     ArrayList<String> listaLetras;//Que quedan
     ArrayList<String> listaPalabras = new ArrayList<>(Arrays.asList(
@@ -45,7 +48,8 @@ public class GameActivity extends AppCompatActivity {
         //Explorando los metodos encontre este que permite mandar clases de un activity a otro
         user = intent.getParcelableExtra("user");
         //Primero debemos preparar el tablero para porder jugar
-        String word = listaPalabras.get((int) (Math.random() * listaPalabras.size()));
+        String word = listaPalabras.get((int) (Math.random() * (listaPalabras.size())));
+        //String word = "FIBRA";
         magicWord =word;
         listaLetras = new ArrayList<>(Arrays.asList(word.split("")));
         ImageView cabeza =  (ImageView) findViewById(R.id.cabeza);
@@ -86,6 +90,7 @@ public class GameActivity extends AppCompatActivity {
         }else{
             ((TextView)findViewById(R.id.ola6)).setText(word.split("")[5]);
         }
+        time = System.currentTimeMillis();
 
         //Ocultamos las letras nuevamente
     }
@@ -94,7 +99,7 @@ public class GameActivity extends AppCompatActivity {
         //Obtenemos el boton
         Button button = (Button) findViewById(view.getId());
         button.setEnabled(false);
-        if(button.getText().toString().contains(magicWord)){
+        if(magicWord.contains(button.getText().toString())){
             //Si contiene la palabra - Se escriben las coincidencias
             TextView ola1 = ((TextView)findViewById(R.id.ola1));
             if(button.getText().toString().equals(ola1.getText().toString())){
@@ -130,7 +135,7 @@ public class GameActivity extends AppCompatActivity {
 
             if(aciertos == magicWord.length()){
                 //Se gana el juego
-
+                gana();
             }
         }else{
             //Si no tiene la palabra ,dibujamos
@@ -159,11 +164,53 @@ public class GameActivity extends AppCompatActivity {
             if(intentosFallidos==5){
                 izquierdo2.setVisibility(View.VISIBLE);
                 //Se pierde
+                pierde();
             }
             intentosFallidos++;
         }
     }
 
+    public void pierde(){
+        //Mostramos cuanto tiempo jugo y lo guardamos en su historial
+        Long last =  System.currentTimeMillis();
+        Long tiempoJugado = last - time;
+        Integer aux = user.getListaIntentos().size();
+        LinkedHashMap<Integer , String> listaNueva = user.getListaIntentos();
+        listaNueva.put(aux+1, tiempoJugado.toString());
+        //Se muestra el mensaje de perder y el boton
+        TextView ola = findViewById(R.id.textoPerder);
+        ola.setText("Perdió / teminó  en  " + tiempoJugado.toString());
+        ola.setVisibility(View.VISIBLE);
+        ola.bringToFront();
+        Button jugarNuevo = (Button) findViewById(R.id.jugarNuevo);
+        jugarNuevo.setVisibility(View.VISIBLE);
+        jugarNuevo.setEnabled(true);
+        jugarNuevo.bringToFront();
+
+    }
+    public void gana(){
+        //Mostramos cuanto tiempo jugo y lo gaurdamos en su historial
+        Long last =  System.currentTimeMillis();
+        Long tiempoJugado = last - time;
+        Integer aux = user.getListaIntentos().size();
+        LinkedHashMap<Integer , String> listaNueva = user.getListaIntentos();
+        listaNueva.put(aux+1,  tiempoJugado.toString());
+        //Se muestra el mensaje de perder y el boton
+        TextView ola = findViewById(R.id.textoPerder);
+        ola.setText("Ganó / teminó  en  " + tiempoJugado.toString());
+        ola.setVisibility(View.VISIBLE);
+        ola.bringToFront();
+        Button jugarNuevo = (Button) findViewById(R.id.jugarNuevo);
+        jugarNuevo.setVisibility(View.VISIBLE);
+        jugarNuevo.setEnabled(true);
+        jugarNuevo.bringToFront();
+
+    }
+
+    public void reiniciarTodo(){
+        //cuando oprime el boton reinicia el juego
+
+    }
 
     @Override
     public  boolean onCreateOptionsMenu(Menu menu ){
