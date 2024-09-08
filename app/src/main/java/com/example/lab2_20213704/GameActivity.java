@@ -140,12 +140,9 @@ public class GameActivity extends AppCompatActivity {
                     //Mostramos cuanto tiempo jugo y lo gaurdamos en su historial
                     Long last = System.currentTimeMillis();
                     Long tiempoJugado = last - time;
-                    Integer aux = user.getListaIntentos().size();
-                    LinkedHashMap<Integer, String> listaNueva = user.getListaIntentos();
-                    listaNueva.put(aux + 1, tiempoJugado.toString());
                     //Se muestra el mensaje de perder y el boton
                     TextView ola = findViewById(R.id.textoPerder);
-                    ola.setText("Ganó / teminó  en  " + tiempoJugado.toString());
+                    ola.setText("Ganó / teminó  en  " + tiempoJugado);
                     ola.setVisibility(View.VISIBLE);
                     ola.bringToFront();
                     Button jugarNuevo = (Button) findViewById(R.id.jugarNuevo);
@@ -181,20 +178,17 @@ public class GameActivity extends AppCompatActivity {
                     izquierdo2.setVisibility(View.VISIBLE);
                     //Se pierde
                     //Mostramos cuanto tiempo jugo y lo guardamos en su historial
-                    Long tiempoJugado = System.currentTimeMillis() - time;
-                    Integer aux = user.getListaIntentos().size();
-                    LinkedHashMap<Integer, String> listaNueva = user.getListaIntentos();
-                    listaNueva.put(aux + 1, tiempoJugado.toString());
+                    Long last = System.currentTimeMillis();
+                    Long tiempoJugado = last - time;
                     //Se muestra el mensaje de perder y el boton
                     TextView ola = findViewById(R.id.textoPerder);
-                    //ola.setText("Perdió / teminó  en  " + tiempoJugado.toString());
+                    ola.setText("perdio / teminó  en  " + tiempoJugado);
                     ola.setVisibility(View.VISIBLE);
                     ola.bringToFront();
                     Button jugarNuevo = (Button) findViewById(R.id.jugarNuevo);
                     jugarNuevo.setVisibility(View.VISIBLE);
                     jugarNuevo.setEnabled(true);
                     jugarNuevo.bringToFront();
-
                 }
                 intentosFallidos++;
             }
