@@ -1,16 +1,13 @@
 package com.example.lab2_20213704.Beans;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
 public class Usuario implements Serializable {
 
    private String nombre;
-   private String palabraSecreta;
-   private String palabraIntento;
-   private LinkedHashMap<Integer , String > listaIntentos;
-
-
+   private ArrayList<String> listaIntentos;
 
    public String getNombre() {
       return nombre;
@@ -20,27 +17,11 @@ public class Usuario implements Serializable {
       this.nombre = nombre;
    }
 
-   public String getPalabraSecreta() {
-      return palabraSecreta;
-   }
-
-   public void setPalabraSecreta(String palabraSecreta) {
-      this.palabraSecreta = palabraSecreta;
-   }
-
-   public String getPalabraIntento() {
-      return palabraIntento;
-   }
-
-   public void setPalabraIntento(String palabraIntento) {
-      this.palabraIntento = palabraIntento;
-   }
-
-   public LinkedHashMap<Integer, String> getListaIntentos() {
+   public ArrayList<String> getListaIntentos() {
       return listaIntentos;
    }
 
-   public void setListaIntentos(LinkedHashMap<Integer, String> listaIntentos) {
+   public void setListaIntentos(ArrayList<String> listaIntentos) {
       this.listaIntentos = listaIntentos;
    }
 }

@@ -7,9 +7,11 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextClock;
 import android.widget.TextView;
 
@@ -143,6 +145,9 @@ public class GameActivity extends AppCompatActivity {
                     //Se muestra el mensaje de perder y el boton
                     TextView ola = findViewById(R.id.textoPerder);
                     ola.setText("Ganó / teminó  en  " + tiempoJugado);
+//                    ArrayList<String> lista = user.getListaIntentos();
+//                    lista.add("jugo-"+tiempoJugado.toString());
+//                    user.setListaIntentos(lista);
                     ola.setVisibility(View.VISIBLE);
                     ola.bringToFront();
                     Button jugarNuevo = (Button) findViewById(R.id.jugarNuevo);
@@ -185,6 +190,9 @@ public class GameActivity extends AppCompatActivity {
                     ola.setText("perdio / teminó  en  " + tiempoJugado);
                     ola.setVisibility(View.VISIBLE);
                     ola.bringToFront();
+//                    ArrayList<String> lista  = user.getListaIntentos();
+//                    lista.add("jugo-"+tiempoJugado.toString());
+//                    user.setListaIntentos(lista);
                     Button jugarNuevo = (Button) findViewById(R.id.jugarNuevo);
                     jugarNuevo.setVisibility(View.VISIBLE);
                     jugarNuevo.setEnabled(true);
@@ -198,9 +206,77 @@ public class GameActivity extends AppCompatActivity {
     }
 
 
-    public void reiniciarTodo(){
+    public void reiniciarTodo(View view){
         //cuando oprime el boton reinicia el juego
+        String word = listaPalabras.get((int) (Math.random() * (listaPalabras.size())));
+        //String word = "FIBRA";
+        magicWord =word;
+        listaLetras = new ArrayList<>(Arrays.asList(word.split("")));
+        ImageView cabeza =  (ImageView) findViewById(R.id.cabeza);
+        ImageView torso =  (ImageView) findViewById(R.id.torso);
+        ImageView derecho1 =  (ImageView) findViewById(R.id.derecho1);
+        ImageView derecho2 =  (ImageView) findViewById(R.id.derecho2);
+        ImageView izquierdo1 =  (ImageView) findViewById(R.id.izquierdo1);
+        ImageView izquierdo2 =  (ImageView) findViewById(R.id.izquierdo2);
+        cabeza.setVisibility(View.INVISIBLE);
+        torso.setVisibility(View.INVISIBLE);
+        derecho1.setVisibility(View.INVISIBLE);
+        derecho2.setVisibility(View.INVISIBLE);
+        izquierdo1.setVisibility(View.INVISIBLE);
+        izquierdo2.setVisibility(View.INVISIBLE);
 
+
+        ((TextView)findViewById(R.id.ola1)).setVisibility(View.INVISIBLE);
+        ((TextView)findViewById(R.id.ola2)).setVisibility(View.INVISIBLE);
+        ((TextView)findViewById(R.id.ola3)).setVisibility(View.INVISIBLE);
+        ((TextView)findViewById(R.id.ola4)).setVisibility(View.INVISIBLE);
+        ((TextView)findViewById(R.id.ola5)).setVisibility(View.INVISIBLE);
+        ((TextView)findViewById(R.id.ola6)).setVisibility(View.INVISIBLE);
+
+
+
+        //Ahora revelamos lso contenidos de cada elemento de texto pero los volvemos invisibles
+        ((TextView)findViewById(R.id.ola1)).setText(word.split("")[0]);
+        ((TextView)findViewById(R.id.ola2)).setText(word.split("")[1]);
+        ((TextView)findViewById(R.id.ola3)).setText(word.split("")[2]);
+        ((TextView)findViewById(R.id.ola4)).setText(word.split("")[3]);
+        ((TextView)findViewById(R.id.ola5)).setText(word.split("")[4]);
+        if(word.length()==5){
+            //Ocultamos un caso
+            findViewById(R.id.sexto).setVisibility(View.INVISIBLE);
+            findViewById(R.id.ola6).setVisibility(View.INVISIBLE);
+
+            //Ahora cambiamos las palabras de cada text de acuerdo a la aleatoria qu enos haya salido
+        }else{
+            ((TextView)findViewById(R.id.ola6)).setText(word.split("")[5]);
+        }
+        time = System.currentTimeMillis();
+
+        Button b = findViewById(R.id.jugarNuevo);
+        b.setEnabled(false);
+        b.setVisibility(View.INVISIBLE);
+        //Ocultamos las letras nuevamente
+
+        //Activamos todos los botones
+        //Le pedi a chatGpt que me diera una forma de activar a todos lo botones de porrazo
+        LinearLayout layout = findViewById(R.id.tablero);
+
+        // Llamamos a la función para activar todos los botones
+        enableAllButtons(layout, true);
+
+    }
+    //Funcion proporcionada por chatGpt
+    private void enableAllButtons(ViewGroup layout, boolean enable) {
+        // Recorremos todos los hijos del layout
+        for (int i = 0; i < layout.getChildCount(); i++) {
+            View view = layout.getChildAt(i);
+            // Si es un Button, lo activamos/desactivamos
+            if (view instanceof LinearLayout) {
+                enableAllButtons((ViewGroup) view, enable);
+            } else if (view instanceof Button) {
+                view.setEnabled(enable); // Activa o desactiva según el valor de 'enable'
+            }
+        }
     }
 
     @Override
