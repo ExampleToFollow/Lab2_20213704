@@ -263,7 +263,8 @@ public class GameActivity extends AppCompatActivity {
 
         // Llamamos a la función para activar todos los botones
         enableAllButtons(layout, true);
-
+        intentosFallidos = 0;
+        aciertos = 0;
     }
     //Funcion proporcionada por chatGpt
     private void enableAllButtons(ViewGroup layout, boolean enable) {
@@ -275,6 +276,7 @@ public class GameActivity extends AppCompatActivity {
                 enableAllButtons((ViewGroup) view, enable);
             } else if (view instanceof Button) {
                 view.setEnabled(enable); // Activa o desactiva según el valor de 'enable'
+
             }
         }
     }
