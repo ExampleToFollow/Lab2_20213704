@@ -2,6 +2,8 @@ package com.example.lab2_20213704;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,7 +18,7 @@ public class EstadisticasActivity extends AppCompatActivity {
         Intent intent = getIntent();
         //Explorando los metodos encontre este que permite mandar clases de un activity a otro
         user = intent.getParcelableExtra("user");
-
-
+        TextView ola = findViewById(R.id.nombreJugador);
+        //ola.setText("Jugador: " + user.getNombre());
     }
 }
