@@ -3,6 +3,7 @@ package com.example.lab2_20213704;
 import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -97,115 +98,111 @@ public class GameActivity extends AppCompatActivity {
 
     public void marcarLetra(View view){
         //Obtenemos el boton
-        Button button = (Button) findViewById(view.getId());
-        button.setEnabled(false);
-        if(magicWord.contains(button.getText().toString())){
-            //Si contiene la palabra - Se escriben las coincidencias
-            TextView ola1 = ((TextView)findViewById(R.id.ola1));
-            if(button.getText().toString().equals(ola1.getText().toString())){
-                ola1.setVisibility(View.VISIBLE);
-                aciertos++;
-            }
-            TextView ola2 = ((TextView)findViewById(R.id.ola2));
-            if(button.getText().toString().equals(ola2.getText().toString())){
-                ola2.setVisibility(View.VISIBLE);
-                aciertos++;
-            }
-            TextView ola3 = ((TextView)findViewById(R.id.ola3));
-            if(button.getText().toString().equals(ola3.getText().toString())){
-                ola3.setVisibility(View.VISIBLE);
-                aciertos++;
-            }
-            TextView ola4 = ((TextView)findViewById(R.id.ola4));
-            if(button.getText().toString().equals(ola4.getText().toString())){
-                ola4.setVisibility(View.VISIBLE);
-                aciertos++;
-            }
-            TextView ola5 = ((TextView)findViewById(R.id.ola5));
-            if(button.getText().toString().equals(ola5.getText().toString())){
-                ola5.setVisibility(View.VISIBLE);
-                aciertos++;
-            }
-            TextView ola6 = ((TextView)findViewById(R.id.ola6));
-            if(button.getText().toString().equals(ola6.getText().toString())){
-                ola6.setVisibility(View.VISIBLE);
-                aciertos++;
-            }
+        try {
+            Button button = (Button) findViewById(view.getId());
+            button.setEnabled(false);
+            if (magicWord.contains(button.getText().toString())) {
+                //Si contiene la palabra - Se escriben las coincidencias
+                TextView ola1 = ((TextView) findViewById(R.id.ola1));
+                if (button.getText().toString().equals(ola1.getText().toString())) {
+                    ola1.setVisibility(View.VISIBLE);
+                    aciertos++;
+                }
+                TextView ola2 = ((TextView) findViewById(R.id.ola2));
+                if (button.getText().toString().equals(ola2.getText().toString())) {
+                    ola2.setVisibility(View.VISIBLE);
+                    aciertos++;
+                }
+                TextView ola3 = ((TextView) findViewById(R.id.ola3));
+                if (button.getText().toString().equals(ola3.getText().toString())) {
+                    ola3.setVisibility(View.VISIBLE);
+                    aciertos++;
+                }
+                TextView ola4 = ((TextView) findViewById(R.id.ola4));
+                if (button.getText().toString().equals(ola4.getText().toString())) {
+                    ola4.setVisibility(View.VISIBLE);
+                    aciertos++;
+                }
+                TextView ola5 = ((TextView) findViewById(R.id.ola5));
+                if (button.getText().toString().equals(ola5.getText().toString())) {
+                    ola5.setVisibility(View.VISIBLE);
+                    aciertos++;
+                }
+                TextView ola6 = ((TextView) findViewById(R.id.ola6));
+                if (button.getText().toString().equals(ola6.getText().toString())) {
+                    ola6.setVisibility(View.VISIBLE);
+                    aciertos++;
+                }
 
 
-            if(aciertos == magicWord.length()){
-                //Se gana el juego
-                gana();
-            }
-        }else{
-            //Si no tiene la palabra ,dibujamos
-            ImageView cabeza =  (ImageView) findViewById(R.id.cabeza);
-            ImageView torso =  (ImageView) findViewById(R.id.torso);
-            ImageView derecho1 =  (ImageView) findViewById(R.id.derecho1);
-            ImageView derecho2 =  (ImageView) findViewById(R.id.derecho2);
-            ImageView izquierdo1 =  (ImageView) findViewById(R.id.izquierdo1);
-            ImageView izquierdo2 =  (ImageView) findViewById(R.id.izquierdo2);
+                if (aciertos == magicWord.length()) {
+                    //Se gana el juego
+                    //Mostramos cuanto tiempo jugo y lo gaurdamos en su historial
+                    Long last = System.currentTimeMillis();
+                    Long tiempoJugado = last - time;
+                    Integer aux = user.getListaIntentos().size();
+                    LinkedHashMap<Integer, String> listaNueva = user.getListaIntentos();
+                    listaNueva.put(aux + 1, tiempoJugado.toString());
+                    //Se muestra el mensaje de perder y el boton
+                    TextView ola = findViewById(R.id.textoPerder);
+                    ola.setText("Ganó / teminó  en  " + tiempoJugado.toString());
+                    ola.setVisibility(View.VISIBLE);
+                    ola.bringToFront();
+                    Button jugarNuevo = (Button) findViewById(R.id.jugarNuevo);
+                    jugarNuevo.setVisibility(View.VISIBLE);
+                    jugarNuevo.setEnabled(true);
+                    jugarNuevo.bringToFront();
+                }
+            } else {
+                //Si no tiene la palabra ,dibujamos
+                ImageView cabeza = (ImageView) findViewById(R.id.cabeza);
+                ImageView torso = (ImageView) findViewById(R.id.torso);
+                ImageView derecho1 = (ImageView) findViewById(R.id.derecho1);
+                ImageView derecho2 = (ImageView) findViewById(R.id.derecho2);
+                ImageView izquierdo1 = (ImageView) findViewById(R.id.izquierdo1);
+                ImageView izquierdo2 = (ImageView) findViewById(R.id.izquierdo2);
 
-            if(intentosFallidos==0){
-                cabeza.setVisibility(View.VISIBLE);
+                if (intentosFallidos == 0) {
+                    cabeza.setVisibility(View.VISIBLE);
+                }
+                if (intentosFallidos == 1) {
+                    torso.setVisibility(View.VISIBLE);
+                }
+                if (intentosFallidos == 2) {
+                    derecho1.setVisibility(View.VISIBLE);
+                }
+                if (intentosFallidos == 3) {
+                    izquierdo1.setVisibility(View.VISIBLE);
+                }
+                if (intentosFallidos == 4) {
+                    derecho2.setVisibility(View.VISIBLE);
+                }
+                if (intentosFallidos == 5) {
+                    izquierdo2.setVisibility(View.VISIBLE);
+                    //Se pierde
+                    //Mostramos cuanto tiempo jugo y lo guardamos en su historial
+                    Long tiempoJugado = System.currentTimeMillis() - time;
+                    Integer aux = user.getListaIntentos().size();
+                    LinkedHashMap<Integer, String> listaNueva = user.getListaIntentos();
+                    listaNueva.put(aux + 1, tiempoJugado.toString());
+                    //Se muestra el mensaje de perder y el boton
+                    TextView ola = findViewById(R.id.textoPerder);
+                    //ola.setText("Perdió / teminó  en  " + tiempoJugado.toString());
+                    ola.setVisibility(View.VISIBLE);
+                    ola.bringToFront();
+                    Button jugarNuevo = (Button) findViewById(R.id.jugarNuevo);
+                    jugarNuevo.setVisibility(View.VISIBLE);
+                    jugarNuevo.setEnabled(true);
+                    jugarNuevo.bringToFront();
+
+                }
+                intentosFallidos++;
             }
-            if(intentosFallidos==1){
-                torso.setVisibility(View.VISIBLE);
-            }
-            if(intentosFallidos==2){
-                derecho1.setVisibility(View.VISIBLE);
-            }
-            if(intentosFallidos==3){
-                izquierdo1.setVisibility(View.VISIBLE);
-            }
-            if(intentosFallidos==4){
-                derecho2.setVisibility(View.VISIBLE);
-            }
-            if(intentosFallidos==5){
-                izquierdo2.setVisibility(View.VISIBLE);
-                //Se pierde
-                pierde();
-            }
-            intentosFallidos++;
+        }catch(Exception error){
+            Log.i("TAG" , error.getMessage());
         }
     }
 
-    public void pierde(){
-        //Mostramos cuanto tiempo jugo y lo guardamos en su historial
-        Long last =  System.currentTimeMillis();
-        Long tiempoJugado = last - time;
-        Integer aux = user.getListaIntentos().size();
-        LinkedHashMap<Integer , String> listaNueva = user.getListaIntentos();
-        listaNueva.put(aux+1, tiempoJugado.toString());
-        //Se muestra el mensaje de perder y el boton
-        TextView ola = findViewById(R.id.textoPerder);
-        ola.setText("Perdió / teminó  en  " + tiempoJugado.toString());
-        ola.setVisibility(View.VISIBLE);
-        ola.bringToFront();
-        Button jugarNuevo = (Button) findViewById(R.id.jugarNuevo);
-        jugarNuevo.setVisibility(View.VISIBLE);
-        jugarNuevo.setEnabled(true);
-        jugarNuevo.bringToFront();
-
-    }
-    public void gana(){
-        //Mostramos cuanto tiempo jugo y lo gaurdamos en su historial
-        Long last =  System.currentTimeMillis();
-        Long tiempoJugado = last - time;
-        Integer aux = user.getListaIntentos().size();
-        LinkedHashMap<Integer , String> listaNueva = user.getListaIntentos();
-        listaNueva.put(aux+1,  tiempoJugado.toString());
-        //Se muestra el mensaje de perder y el boton
-        TextView ola = findViewById(R.id.textoPerder);
-        ola.setText("Ganó / teminó  en  " + tiempoJugado.toString());
-        ola.setVisibility(View.VISIBLE);
-        ola.bringToFront();
-        Button jugarNuevo = (Button) findViewById(R.id.jugarNuevo);
-        jugarNuevo.setVisibility(View.VISIBLE);
-        jugarNuevo.setEnabled(true);
-        jugarNuevo.bringToFront();
-
-    }
 
     public void reiniciarTodo(){
         //cuando oprime el boton reinicia el juego
